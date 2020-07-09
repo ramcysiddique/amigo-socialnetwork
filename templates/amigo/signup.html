@@ -1,0 +1,193 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Amigo - Social Network HTML Template</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+
+    <!-- CSS
+	============================================ -->
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}">
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="{% static 'css/vendor/bicon.min.css' %}">
+    <!-- Flat Icon CSS -->
+    <link rel="stylesheet" href="{% static 'css/vendor/flaticon.css' %}">
+    <!-- audio & video player CSS -->
+    <link rel="stylesheet" href="{% static 'css/plugins/plyr.css' %}">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="{% static 'css/plugins/slick.min.css' %}">
+    <!-- nice-select CSS -->
+    <link rel="stylesheet" href="{% static 'css/plugins/nice-select.css' %}">
+    <!-- perfect scrollbar css -->
+    <link rel="stylesheet" href="{% static 'css/plugins/perfect-scrollbar.css' %}">
+    <!-- light gallery css -->
+    <link rel="stylesheet" href="{% static 'css/plugins/lightgallery.min.css' %}">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="bg-transparent">
+
+    <main>
+        <div class="main-wrapper pb-0 mb-0">
+            <div class="timeline-wrapper">
+                <div class="timeline-header">
+                    <div class="container-fluid p-0">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-lg-6">
+                                <div class="timeline-logo-area d-flex align-items-center">
+                                    <div class="timeline-logo">
+                                        <a href="index.html">
+                                            <img src="{% static 'images/logo/logo.png' %}" alt="timeline logo">
+                                        </a>
+                                    </div>
+                                    <div class="timeline-tagline">
+                                        <h6 class="tagline">It’s helps you to connect and share with the people in your life</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="login-area">
+                                    <!----------------------login  formdata---------------------------------!>
+                                  <form class="login-inner--form" action="/amigo/login" method="post">
+                                      {% csrf_token %}
+                                    <div class="row align-items-center">
+
+                                        <div class="col-12 col-sm">
+                                            <input type="email" placeholder="Email or Username" class="single-field" name="email">
+                                        </div>
+                                        <div class="col-12 col-sm">
+                                            <input type="password" placeholder="Password" class="single-field" name="password">
+                                        </div>
+                                        <div class="col-12 col-sm-auto">
+                                            <button class="login-btn">Login</button>
+                                        </div>
+                                        <div class="msg" style="color:white;">
+                                                  <b><i>{{message}}</i></b>
+                                                </div>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-page-wrapper">
+                    <div class="container-fluid p-0">
+                        <div class="row no-gutters">
+                            <div class="col-lg-6 order-2 order-lg-1">
+                                <div class="timeline-bg-content bg-img" data-bg="{% static 'images/timeline/addatimeline.jpg' %}">
+                                    <h3 class="timeline-bg-title">Welcome to the Biggest Social Network in the World!
+
+				                   </h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 order-1 order-lg-2 d-flex align-items-center justify-content-center">
+                                <div class="signup-form-wrapper">
+                                    <h1 class="create-acc text-center">Create An Account</h1>
+                                    <div class="signup-inner text-center">
+                                        <h3 class="title">Welcome to Amigo</h3>
+                                        <!----------------formdata-----------------!>
+
+                                        <form class="signup-inner--form" action="/amigo/signup" method="post">
+                                            {% csrf_token %}
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <input type="email" class="single-field" placeholder="Email" name="email" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="single-field" placeholder="First Name" name="first_name" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="single-field" placeholder="Last Name" name="last_name" required>
+                                                </div>
+                                                <div class="col-12">
+                                                    <input type="password" class="single-field" placeholder="Password" name="password" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="nice-select" name="gender">
+                                                        <option value="trending">Gender</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="nice-select" name="age">
+                                                        <option value="trending">Age</option>
+                                                        <option value="18+">18+</option>
+                                                        <option value="18-">18-</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <select class="nice-select" name="country">
+                                                        <option value="trending">Country</option>
+                                                        <option value="Bangladesh">Bangladesh</option>
+                                                        <option value="Noakhali">Noakhali</option>
+                                                        <option value="Australia">Australia</option>
+                                                        <option value="China">China</option>
+                                                    </select>
+                                                </div>
+                                                <div class="msg" style="color:red;">
+                                                  <b><i>{{msg}}</i></b>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button class="submit-btn">Create Account</button>
+                                                </div>
+                                            </div>
+                                            <h6 class="terms-condition">I have read & accepted the <a href="#">terms of use</a></h6>
+                                        </form>
+
+                                        <!------------------formdata-----------------------------------!>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JS
+============================================ -->
+
+    <!-- Modernizer JS -->
+    <script src="{% static 'js/vendor/modernizr-3.6.0.min.js' %}"></script>
+    <!-- jQuery JS -->
+    <script src="{% static 'js/vendor/jquery-3.3.1.min.js' %}"></script>
+    <!-- Popper JS -->
+    <script src="{% static 'js/vendor/popper.min.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <!-- Slick Slider JS -->
+    <script src="{% static 'js/plugins/slick.min.js' %}"></script>
+    <!-- nice select JS -->
+    <script src="{% static 'js/plugins/nice-select.min.js' %}"></script>
+    <!-- audio video player JS -->
+    <script src="{% static 'js/plugins/plyr.min.js' %}"></script>
+    <!-- perfect scrollbar js -->
+    <script src="{% static 'js/plugins/perfect-scrollbar.min.js' %}"></script>
+    <!-- light gallery js -->
+    <script src="{% static 'js/plugins/lightgallery-all.min.js' %}"></script>
+    <!-- image loaded js -->
+    <script src="{% static 'js/plugins/imagesloaded.pkgd.min.js' %}"></script>
+    <!-- isotope filter js -->
+    <script src="{% static 'js/plugins/isotope.pkgd.min.js' %}"></script>
+    <!-- Main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
